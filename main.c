@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:51:43 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/04 10:28:48 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/04 10:34:27 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void reset ()
 /* main pour tester toute la libft */
 int main()
 {
+	purple ();	
+	printf("------------------\n");
+	cyan ();
+	printf("main libft\n");
+
 
 	char alnum [] = "aB3! ";
 	purple ();	
