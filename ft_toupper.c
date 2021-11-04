@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@42lyon.fr>              +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:40:56 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/03 22:46:30 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/04 10:02:11 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-	c = c + 32;
+	c = c - 32;
 	return (c);
 }

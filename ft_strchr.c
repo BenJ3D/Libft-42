@@ -3,28 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@42lyon.fr>              +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:53:31 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/03 23:07:47 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:04:41 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(char *s, int c)
-{
-	char cc;
-	cc = c;
-	
-	while(*s != cc)
-		s++;
+#include "libft.h"
 
-	return (s);
-}
-#include <stdio.h>
-#include <string.h>
-int	main()
-{
-	char tab2 [] = "Salut les gens";
-	printf("%s\n", tab2);
-	printf("%s", ft_strchr(tab2, 'g'));
+char *ft_strchr(const char *s, int c)
+{	
+	if (!*s)
+		return (NULL);
+	while(*s && *s != c)  // modifier en int
+	{
+		if (*s == 0)
+			return (NULL);
+		s++;
+	}
+	return ((char*)s);
 }

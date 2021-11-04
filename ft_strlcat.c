@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@42lyon.fr>              +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:35:43 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/03 22:38:23 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/04 09:36:46 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size) // passer en size_t
 {
@@ -33,19 +33,19 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size) // passer en s
 	return (j);
 }
 
-#include <stdio.h>
-#include <string.h>
-int	main()
-{
-	char tab2 [] = "coucou les zouzous et ";
-	char tab [] = "comment tu vas";
+// #include <stdio.h>
+// #include <string.h>
+// int	main()
+// {
+// 	char tab2 [] = "coucou les zouzous et ";
+// 	char tab [] = "comment tu vas";
 
-	int	len;
-	len = 0;
-	while (tab[len])
-		len++;
+// 	int	len;
+// 	len = 0;
+// 	while (tab[len])
+// 		len++;
 
-	//printf("%s\n", tab);
-	ft_strlcat(tab2, tab, len);  // verifier len et size -1 ou non
-	printf("%s\n", tab2);
-}
+// 	//printf("%s\n", tab);
+// 	ft_strlcat(tab2, tab, len);  // verifier len et size -1 ou non
+// 	printf("%s\n", tab2);
+// }
