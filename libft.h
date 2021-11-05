@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benasusmac <benasusmac@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:59:56 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/04 12:46:14 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/04 16:39:25 by benasusmac       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 #include <string.h>
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
@@ -27,4 +27,5 @@ int	ft_toupper(int c);
 int	ft_tolower(int c);
 size_t	ft_strlcpy(char *dest, char *src, size_t size);
 char *ft_strchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benasusmac <benasusmac@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:51:43 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/04 13:56:19 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/05 00:21:18 by benasusmac       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,14 +168,28 @@ purple ();
 	red ();
 	printf("STRCHR\n");
 	reset ();
-	char chr1 [] = "Salut les gens";
-	char x = 'w';	
+	char chr1 [] = "Salut g les gens";
+	char x = 'g';	
 	printf("%s\n", chr1);
 	green ();
 	printf("%s\n", strchr(chr1, x));
-	printf("%s\n", strchr("Hello world my name is ben", x));
+	printf("%s\n", strchr("Hello world g my name g is ben", x));
 	reset ();
 	printf("%s\n", ft_strchr(chr1, x));
-	printf("%s\n", ft_strchr("Hello world my name is ben", x));
+	printf("%s\n", ft_strchr("Hello world g my name g is ben", x));
 
+	purple ();	
+	printf("------------------\n");
+	red ();
+	printf("STRRCHR\n");
+	reset ();
+	char chrr1 [] = "Salut g les gens";
+	char x2 = 'g';	
+	printf("%s\n", chrr1);
+	green ();
+	printf("%s\n", strrchr(chrr1, x2));
+	printf("%s\n", strrchr("Hello world g my name g is ben", x2));
+	reset ();
+	printf("%s\n", ft_strrchr(chrr1, x2));
+	printf("%s\n", ft_strrchr("Hello world g my name g is ben", x2));
 }
