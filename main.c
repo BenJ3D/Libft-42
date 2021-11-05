@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benasusmac <benasusmac@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:51:43 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/05 00:21:18 by benasusmac       ###   ########.fr       */
+/*   Updated: 2021/11/05 15:25:06 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string.h>
 #include "libft.h"
 
-/*fonctions pour changer couleur des print f*/
+// /*fonctions pour changer couleur des print f*/
 void red () { printf("\033[1;31m"); }
 void yellow () { printf("\033[1;33m"); }
 void green (){  printf("\033[0;32m");}
@@ -25,7 +25,18 @@ void purple (){  printf("\033[1;35m");}
 void cyan (){  printf("\033[0;36m");}
 void white (){  printf("\033[0;37m");}
 void reset (){  printf("\033[0m");}
+/* complet with main's falanso */
+void	test_regular_fnc(char	*string, char	c)
+{
+	printf("%s", strrchr(string, c));
+	printf("%c", '\n');
+}
 
+void	test_ft_fnc(char	*string, char	c)
+{
+	printf("%s", ft_strrchr(string, c));
+	printf("%c", '\n');
+}
 /* main pour tester toute la libft */
 int main()
 {
@@ -133,18 +144,17 @@ int main()
 	purple ();	
 	printf("------------------\n");
 	red ();
-	printf("MEMCPY -- en cours\n");
+	printf("MEMCPY\n");
 	reset ();
-	char cp1 [] = "Hello World!";      // ENCOUUUUUUUUURS
+	char cp1 [] = "Hello World!";
 	char desta1[50];
-	//char destb1[13];
+	char destb1[13];
 	printf("%s\n", cp1);
-	//memcpy(desta1, cp1, 5);
-	memcpy(desta1, "Coucou", 5);
-	green ();
-	printf("%s\n", desta1);
-	reset();
 
+	green ();
+	printf("%s\n",	memcpy(desta1, cp1, 5));
+	reset();
+	printf("%s\n", ft_memcpy(destb1, cp1, 5));
 	
 purple ();	
 	printf("------------------\n");
@@ -192,4 +202,41 @@ purple ();
 	reset ();
 	printf("%s\n", ft_strrchr(chrr1, x2));
 	printf("%s\n", ft_strrchr("Hello world g my name g is ben", x2));
+	
+char	string1[] = "0123456789";
+	char	string2[] = "A8BCDEF3IJKLMNOPQRSTU\200WYZabcdefgh9ijk*&lmnˆpkr st+vwxyz";
+	char	string3[] = "\127\1125feq\00p0`e@[{}sqg\201";
+	char	string4[] = "00\000ef/*qeq:|+-2";
+	char	string5[] = "ef/*qeq:|+-2";
+	char	string6[] = "\001\040\200\176\177\300\050fzlk1080735cf,..,zqewr!";
+	green ();
+	test_regular_fnc(string1, '6');
+	reset ();
+	test_ft_fnc(string1, '6');
+
+	green ();
+	test_regular_fnc(string1, 'x');
+	reset ();
+	test_ft_fnc(string1, 'x');
+	green ();
+	test_regular_fnc(string2, '\200');
+	reset ();
+	test_ft_fnc(string2, '\200');
+	green ();
+	test_regular_fnc(string3, '\112');
+	reset ();
+	test_ft_fnc(string3, '\112');
+	green ();
+	test_regular_fnc(string4, '0');
+	reset ();
+	test_ft_fnc(string4, '0');
+	green ();
+	test_regular_fnc(string5, 'e');
+	reset ();
+	test_ft_fnc(string5, 'e');
+	green ();
+	test_regular_fnc(string6, 0);
+	reset ();
+	test_ft_fnc(string6, 0);
+
 }

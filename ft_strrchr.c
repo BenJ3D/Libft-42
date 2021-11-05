@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benasusmac <benasusmac@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:53:31 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/05 01:07:13 by benasusmac       ###   ########.fr       */
+/*   Updated: 2021/11/05 13:24:39 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,14 @@
 
 char *ft_strrchr(const char *s, int c)
 {	
-    int len;
-
-    
-    len = ft_strlen(s);
-    //printf("%d debug\n", len);   //debug
-	if (!*s)
-		return (NULL);
-    while(len >= 0 && s[len] != c)
+	size_t i;
+	i = ft_strlen(s);
+	while (i > 0)
 	{
-        len--;
-        s--;
-         printf("%d\n", len);   //debug
-    }
-	if (*s == 0)
-			return (NULL);
-	return ((char*)s);
+		if (s[i] == c)
+			return ((char*)s+i);
+		i--;
+	}
+		return (0);
 }
+
