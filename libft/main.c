@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:51:43 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/05 15:25:06 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/06 17:10:14 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,72 @@ void cyan (){  printf("\033[0;36m");}
 void white (){  printf("\033[0;37m");}
 void reset (){  printf("\033[0m");}
 /* complet with main's falanso */
+void	mvtest_regular_fnc(char	*restrict dst, char *restrict src,	int n)
+{
+	int		i;
+	void	*pnt;
+
+	pnt = memmove(dst, src, n);
+
+	i = 0;
+	while (i < n)
+	{
+		printf("%d", dst[i]);
+		i++;
+	}
+	printf("%c", '\n');
+	i = 0;
+	while (i < n)
+	{
+		printf("%c", dst[i]);
+		i++;
+	}
+	printf("%c", '\n');
+	printf("%pt", pnt);
+	printf("%c", '\n');
+	printf("%s", (char *)pnt);
+	printf("%c", '\n');
+	printf("%c", '\n');
+}
+
+void	mvtest_ft_fnc(char	*restrict dst, char *restrict src,	int n)
+{
+	int		i;
+	void	*pnt;
+
+	pnt = ft_memmove(dst, src, n);
+
+	i = 0;
+	while (i < n)
+	{
+		printf("%d", dst[i]);
+		i++;
+	}
+	printf("%c", '\n');
+	i = 0;
+	while (i < n)
+	{
+		printf("%c", dst[i]);
+		i++;
+	}
+	printf("%c", '\n');
+	printf("%pt", pnt);
+	printf("%c", '\n');
+	printf("%s", (char *)pnt);
+	printf("%c", '\n');
+	printf("%c", '\n');
+}
+void	test_regular_fncstrncmp(char	*stringstrncmp1, char	*stringstrncmp2, int size)
+{
+	printf("%d", strncmp(stringstrncmp1, stringstrncmp2, size));
+	printf("%c", '\n');
+}
+
+void	test_ft_fncstrncmp(char	*stringstrncmp1, char	*stringstrncmp2, int size)
+{
+	printf("%d", ft_strncmp(stringstrncmp1, stringstrncmp2, size));
+	printf("%c", '\n');
+}
 void	test_regular_fnc(char	*string, char	c)
 {
 	printf("%s", strrchr(string, c));
@@ -43,7 +109,7 @@ int main()
 	purple ();	
 	printf("------------------\n");
 	cyan ();
-	printf("main libft -- bducrocq\n\n");
+	printf("main libft \n\n");
 	red ();
 	printf("NOM FONCTION\n"); 
 	green ();
@@ -159,6 +225,36 @@ int main()
 purple ();	
 	printf("------------------\n");
 	red ();
+	printf("MEMMOVE\n");
+	reset ();
+char	src1mv[] = "salut";
+	char	src2[] = "salut";
+
+	char	dest1mv[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	dest2mv[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	mvdest4[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	mvdest5[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	dest6mv[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	dest7mv[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	printf("%s", "---- ft_memmove ----\n");
+	green ();
+	mvtest_regular_fnc(dest1mv, src1mv, 4);
+	reset ();
+	mvtest_ft_fnc(dest2mv, src2, 4);
+	green ();
+	mvtest_regular_fnc(mvdest4+2, mvdest4+20, 10);
+	reset ();
+	mvtest_ft_fnc(mvdest5+2, mvdest5+20, 10);
+	green ();
+	mvtest_regular_fnc(dest6mv+20, dest6mv+2, 10);
+	reset ();
+	mvtest_ft_fnc(dest7mv+20, dest7mv+2, 10);
+
+
+
+purple ();	
+	printf("------------------\n");
+	red ();
 	printf("STRLCPY\n");
 	reset ();
 	char lcpy [] = "Salut je dois me stop au 12eme char";
@@ -173,7 +269,7 @@ purple ();
 	ft_strlcpy(lcpy2, lcpy, 22);
 	printf("%s\n", lcpy2);
 
-purple ();	
+	purple ();	
 	printf("------------------\n");
 	red ();
 	printf("STRCHR\n");
@@ -239,4 +335,113 @@ char	string1[] = "0123456789";
 	reset ();
 	test_ft_fnc(string6, 0);
 
+purple ();	
+	printf("------------------\n");
+	red ();
+	printf("STRNCMP\n");
+	reset ();
+	char	stringstrncmp1[] = "01234567890";
+	char	stringstrncmp2[] = "01234567895";
+	char	stringstrncmp3[] = "Salut Bob !";
+	char	stringstrncmp4[] = "Youlo Bob !";
+	char	stringstrncmp5[] = "";
+	char	stringstrncmp6[] = "Pifpaf";
+
+	green ();
+	test_regular_fncstrncmp(stringstrncmp1, stringstrncmp2, 10);
+	reset ();
+	test_ft_fncstrncmp(stringstrncmp1, stringstrncmp2, 10);
+	green ();
+	test_regular_fncstrncmp(stringstrncmp1, stringstrncmp2, 11);
+	reset ();
+	test_ft_fncstrncmp(stringstrncmp1, stringstrncmp2, 11);
+	green ();
+	test_regular_fncstrncmp(stringstrncmp3, stringstrncmp4, 10);
+	reset ();
+	test_ft_fncstrncmp(stringstrncmp3, stringstrncmp4, 10);
+	green ();
+	test_regular_fncstrncmp(stringstrncmp5, stringstrncmp6, 10);
+	reset ();
+	test_ft_fncstrncmp(stringstrncmp5, stringstrncmp6, 10);
+	green ();
+	test_regular_fncstrncmp(stringstrncmp5, stringstrncmp5, 10);
+	reset ();
+	test_ft_fncstrncmp(stringstrncmp5, stringstrncmp5, 10);
+
+	purple ();	
+	printf("------------------\n");
+	red ();
+	printf("MEMCHR\n");
+	reset ();
+	char chr1mm [] = "Salut g les gens";
+	char xmm = 'g';	
+	printf("%s\n", chr1mm);
+	green ();
+	printf("%s\n", memchr(chr1mm, xmm, 10000*sizeof(int)));
+	printf("%s\n", memchr("Hello world g my name g is ben", xmm, 10000*sizeof(int)));
+	reset ();
+	printf("%s\n", ft_strchr(chr1mm, xmm));
+	printf("%s\n", ft_strchr("Hello world g my name g is ben", xmm));
+	 char data[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+    const unsigned int size = 10;
+printf("\n");
+	green ();
+    // On recherche une valeur inhéxistante :
+    void * found2 = memchr( data, 57, size );
+    printf( "57 is %s\n", ( found2 != NULL ? "found" : "not found" ) );
+
+    // On recherche une valeur existante :
+    found2 = memchr( data, 50, size );
+    printf( "50 is %s\n", ( found2 != NULL ? "found" : "not found" ) );
+    if ( found2 != NULL ) {
+        printf( "La valeur à la position calculée est %d\n", *((char *) found2) );
+    }
+printf("\n");
+	reset ();
+ // On recherche une valeur inhéxistante :
+    void * found = ft_memchr( data, 57, size );
+    printf( "57 is %s\n", ( found != NULL ? "found" : "not found" ) );
+
+    // On recherche une valeur existante :
+    found = ft_memchr( data, 50, size );
+    printf( "50 is %s\n", ( found != NULL ? "found" : "not found" ) );
+    if ( found != NULL ) {
+        printf( "La valeur à la position calculée est %d\n", *((char *) found) );
+    }
+
+purple ();	
+	printf("------------------\n");
+	red ();
+	printf("MEMCMP\n");
+	reset ();
+	char cmpv1[] = "salut";
+	char cmpv2[] = "salut";	
+	char cmpv3[] = "saLut";
+	char cmpv4[] = "salut";	
+	char cmpv5[] = "salut";
+	char cmpv6[] = "saLut";
+	char cmpv7[] = "sal\200ut";
+	char cmpv8[] = "sal\0ut";	
+
+		green ();
+	printf ("%d\n", memcmp(cmpv1, cmpv2, 4));
+	reset ();
+	printf ("%d\n", ft_memcmp(cmpv1, cmpv2, 4));
+		green ();
+	printf ("%d\n", memcmp(cmpv3, cmpv4, 4));
+	reset ();
+	printf ("%d\n", ft_memcmp(cmpv3, cmpv4, 4));
+		green ();
+	printf ("%d\n", memcmp(cmpv5, cmpv6, 4));
+	reset ();
+	printf ("%d\n", ft_memcmp(cmpv5, cmpv6, 4));
+		green ();
+	printf ("%d\n", memcmp(cmpv7, cmpv8, 4));
+	reset ();
+	printf ("%d\n", ft_memcmp(cmpv7, cmpv8, 4));
+	
+
+
 }
+
+

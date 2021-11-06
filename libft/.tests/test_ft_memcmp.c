@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_memcmp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falonso <falonso@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 21:10:32 by falonso           #+#    #+#             */
-/*   Updated: 2021/11/03 17:33:40 by falonso          ###   ########lyon.fr   */
+/*   Updated: 2021/11/06 16:35:34 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	test_regular_fnc(void *s1, void *s2, size_t n)
 	printf("%c", '\n');
 }
 
-void	test_ft_fnc(void *s1, void *s2, size_t n)
-{
-	printf("%d", ft_memcmp(s1, s2, n));
-	printf("%c", '\n');
-}
+// void	test_ft_fnc(void *s1, void *s2, size_t n)
+// {
+// 	printf("%d", ft_memcmp(s1, s2, n));
+// 	printf("%c", '\n');
+// }
 
 int	main(void)
 {
@@ -40,30 +40,30 @@ int	main(void)
 	printf("%s", "---- ft_memcmp ----\n");
 
 	test_regular_fnc(mem0, mem1, sizeof(char)*12);
-	test_ft_fnc(mem0, mem1, sizeof(char)*12);
+//	test_ft_fnc(mem0, mem1, sizeof(char)*12);
 	test_regular_fnc(mem0, mem1, sizeof(char)*13);
-	test_ft_fnc(mem0, mem1, sizeof(char)*13);
+//	test_ft_fnc(mem0, mem1, sizeof(char)*13);
 
 	test_regular_fnc(mem1, mem2, sizeof(char)*17);
-	test_ft_fnc(mem1, mem2, sizeof(char)*17);
+//	test_ft_fnc(mem1, mem2, sizeof(char)*17);
 
 	test_regular_fnc(mem2, mem3, sizeof(char)*17);
-	test_ft_fnc(mem2, mem3, sizeof(char)*17);
+	//test_ft_fnc(mem2, mem3, sizeof(char)*17);
 
 	test_regular_fnc(mem3, mem3, sizeof(int)*5);
-	test_ft_fnc(mem3, mem3, sizeof(int)*5);
+//	test_ft_fnc(mem3, mem3, sizeof(int)*5);
 
 	test_regular_fnc(mem3, mem4, sizeof(int)*5);
-	test_ft_fnc(mem3, mem4, sizeof(int)*5);
+//	test_ft_fnc(mem3, mem4, sizeof(int)*5);
 
 	test_regular_fnc(mem3, mem4, sizeof(int)*2);
-	test_ft_fnc(mem3, mem4, sizeof(int)*2);
+	//test_ft_fnc(mem3, mem4, sizeof(int)*2);
 
 	test_regular_fnc(mem3, mem4, sizeof(int)*3);
-	test_ft_fnc(mem3, mem4, sizeof(int)*3);
+	//test_ft_fnc(mem3, mem4, sizeof(int)*3);
 
 	test_regular_fnc(mem5, mem5, sizeof(int)*0);
-	test_ft_fnc(mem5, mem5, sizeof(int)*0);
+	//test_ft_fnc(mem5, mem5, sizeof(int)*0);
 
 	return 0;
 }

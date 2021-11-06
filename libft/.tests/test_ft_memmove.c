@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_memmove.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falonso <falonso@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 21:10:32 by falonso           #+#    #+#             */
-/*   Updated: 2021/11/04 16:59:37 by falonso          ###   ########lyon.fr   */
+/*   Updated: 2021/11/06 14:43:50 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "../ft_memcpy.c"
 #include "../ft_memmove.c"
 
-void	test_regular_fnc(char	*restrict dst, char *restrict src,	int n)
+void	mvtest_regular_fnc(char	*restrict dst, char *restrict src,	int n)
 {
 	int		i;
 	void	*pnt;
@@ -45,7 +45,7 @@ void	test_regular_fnc(char	*restrict dst, char *restrict src,	int n)
 	printf("%c", '\n');
 }
 
-void	test_ft_fnc(char	*restrict dst, char *restrict src,	int n)
+void	mvtest_ft_fnc(char	*restrict dst, char *restrict src,	int n)
 {
 	int		i;
 	void	*pnt;
@@ -75,25 +75,25 @@ void	test_ft_fnc(char	*restrict dst, char *restrict src,	int n)
 
 int	main(void)
 {
-	char	src1[] = "salut";
+	char	src1mv[] = "salut";
 	char	src2[] = "salut";
 
-	char	dest1[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
-	char	dest2[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
-	char	dest4[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
-	char	dest5[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
-	char	dest6[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
-	char	dest7[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	dest1mv[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	dest2mv[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	mvdest4[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	mvdest5[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	dest6mv[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
+	char	dest7mv[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
 	printf("%s", "---- ft_memmove ----\n");
 
-	test_regular_fnc(dest1, src1, 4);
-	test_ft_fnc(dest2, src2, 4);
+	mvtest_regular_fnc(dest1mv, src1mv, 4);
+	mvtest_ft_fnc(dest2mv, src2, 4);
 
-	test_regular_fnc(dest4+2, dest4+20, 10);
-	test_ft_fnc(dest5+2, dest5+20, 10);
+	mvtest_regular_fnc(mvdest4+2, mvdest4+20, 10);
+	mvtest_ft_fnc(mvdest5+2, mvdest5+20, 10);
 
-	test_regular_fnc(dest6+20, dest6+2, 10);
-	test_ft_fnc(dest7+20, dest7+2, 10);
+	mvtest_regular_fnc(dest6mv+20, dest6mv+2, 10);
+	mvtest_ft_fnc(dest7mv+20, dest7mv+2, 10);
 
 	return 0;
 }
