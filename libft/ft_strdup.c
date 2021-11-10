@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 14:30:22 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/09 16:36:27 by bducrocq         ###   ########.fr       */
+/*   Created: 2021/11/09 16:43:35 by bducrocq          #+#    #+#             */
+/*   Updated: 2021/11/09 17:20:48 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strdup(const char *s1)
 {
-	size_t	i;
-	size_t	j;
+	int		len;
+	char	*res;
+	int		i;
 
+	len = ft_strlen(s1);
+	res = malloc(sizeof(*s1) * len + 1);
+	if (!res)
+		return (NULL);
 	i = 0;
-	if (*to_find == 0)
-		return ((char *)str);
-	while (str[i] != 0 && i < len)
+	while (s1[i])
 	{
-		j = 0;
-		while (to_find[j] == str[i + j])
-		{
-			if (to_find[j + 1] == 0)
-				return ((char *)str + i);
-			j++;
-		}
+		res[i] = s1[i];
 		i++;
 	}
-	return (0);
+	res[i] = 0;
+	return (res);
 }
