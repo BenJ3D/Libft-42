@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 09:53:02 by bducrocq          #+#    #+#              #
-#    Updated: 2021/11/06 14:34:35 by bducrocq         ###   ########.fr        #
+#    Updated: 2021/11/10 18:12:14 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ RM = rm -f
 FILES = ft_memset \
 		ft_bzero \
 		ft_memcpy \
-		ft_memccpy \
 		ft_memmove \
 		ft_memchr \
 		ft_memcmp \
@@ -40,20 +39,7 @@ FILES = ft_memset \
 		ft_toupper \
 		ft_tolower \
 		ft_calloc \
-		ft_strdup \
-		ft_substr \
-		ft_strjoin \
-		ft_strtrim \
-		ft_split \
-		ft_itoa \
-		ft_strmapi \
-		ft_putchar_fd \
-		ft_putstr_fd \
-		ft_putendl_fd \
-		ft_putnbr_fd \
-		ft_strtok \
-		ft_strcmp \
-		get_next_line \
+		ft_strdup 
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

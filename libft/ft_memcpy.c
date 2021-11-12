@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 13:36:41 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/06 14:06:31 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/11 21:56:16 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*s;
-	char	*d;
+	size_t		i;
+	const char	*s;
+	char		*d;
 
 	i = 0;
 	d = (void *)dest;
-	s = (void *)src;
+	s = (const void *)src;
+	if (src == 0 && dest == 0)
+		return (0);
 	while (i < n)
 	{
 		d[i] = s[i];
@@ -28,3 +30,4 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (d);
 }
+
