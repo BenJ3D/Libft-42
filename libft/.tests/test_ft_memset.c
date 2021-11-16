@@ -13,12 +13,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include "../libft.h"
 #include "../ft_memset.c"
 
 void	test_regular_fnc(void *a, int c, size_t n, int t)
 {
-	memset(a, c, n);
+	void	*pnt;
+
+	pnt = memset(a, c, n);
 
 	int i = 0;
 	if (t == 0)
@@ -32,14 +33,16 @@ void	test_regular_fnc(void *a, int c, size_t n, int t)
 	}
 	else if (t == 1)
 	{
-		printf("%s",a);
+		printf("%s", (char *)a);
 	}
 	printf("%c", '\n');
 }
 
 void	test_ft_fnc(void *a, int c, size_t n, int t)
 {
-	ft_memset(a, c, n);
+	void	*pnt;
+
+	pnt = ft_memset(a, c, n);
 
 	int i = 0;
 	if (t == 0)
@@ -53,7 +56,7 @@ void	test_ft_fnc(void *a, int c, size_t n, int t)
 	}
 	else if (t == 1)
 	{
-		printf("%s",a);
+		printf("%s", (char *)a);
 	}
 	printf("%c", '\n');
 }

@@ -51,6 +51,11 @@ int	main(void)
 	char	string19[] = "167 881";
 	char	string20[] = "658 zcfgrthr";
 	char	string21[] = "598+598";
+	char	string22[] = "2147483647";
+	char	string23[] = "-2147483648";
+	char	string24[] = "99999999999999999999999999";
+	char	string25[] = "-2147483648";
+	char	string26[] = "2147483647";
 
 	printf("%s", "---- ft_atoi ----\n");
 
@@ -96,6 +101,16 @@ int	main(void)
 	test_ft_fnc(string20);
 	test_regular_fnc(string21);
 	test_ft_fnc(string21);
+	test_regular_fnc(string22);
+	test_ft_fnc(string22);
+	test_regular_fnc(string23);
+	test_ft_fnc(string23);
+	test_regular_fnc(string24);
+	test_ft_fnc(string24);
+	test_regular_fnc(string25);
+	test_ft_fnc(string25);
+	test_regular_fnc(string26);
+	test_ft_fnc(string26);
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 09:53:02 by bducrocq          #+#    #+#              #
-#    Updated: 2021/11/10 18:12:14 by bducrocq         ###   ########.fr        #
+#    Updated: 2021/11/16 18:08:27 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,10 @@ FILES = ft_memset \
 		ft_toupper \
 		ft_tolower \
 		ft_calloc \
-		ft_strdup 
+		ft_strdup \
+		ft_substr \
+		ft_strjoin \
+		ft_strtrim \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

@@ -13,7 +13,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include "../libft.h"
 #include "../ft_strlen.c"
 #include "../ft_strrchr.c"
 
@@ -31,7 +30,7 @@ void	test_ft_fnc(char	*string, char	c)
 
 int	main(void)
 {
-	char	string1[] = "0123456789";
+	char	string1[] = "01234567\089";
 	char	string2[] = "A8BCDEF3IJKLMNOPQRSTU\200WYZabcdefgh9ijk*&lmnˆpkr st+vwxyz";
 	char	string3[] = "\127\1125feq\00p0`e@[{}sqg\201";
 	char	string4[] = "00\000ef/*qeq:|+-2";
@@ -40,8 +39,8 @@ int	main(void)
 
 	printf("%s", "---- ft_strrchr ----\n");
 
-	test_regular_fnc(string1, '6');
-	test_ft_fnc(string1, '6');
+	test_regular_fnc(string1, '3');
+	test_ft_fnc(string1, '3');
 
 	test_regular_fnc(string1, 'x');
 	test_ft_fnc(string1, 'x');

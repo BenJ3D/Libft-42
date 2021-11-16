@@ -6,14 +6,13 @@
 /*   By: falonso <falonso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 21:10:32 by falonso           #+#    #+#             */
-/*   Updated: 2021/11/03 10:35:33 by falonso          ###   ########lyon.fr   */
+/*   Updated: 2021/11/05 16:57:42 by falonso          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include "../libft.h"
 #include "../ft_toupper.c"
 
 void	test_regular_fnc(char	*string)

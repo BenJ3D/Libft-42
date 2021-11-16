@@ -13,7 +13,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include "../libft.h"
 #include "../ft_strchr.c"
 
 void	test_regular_fnc(char	*string, char	c)
@@ -36,6 +35,7 @@ int	main(void)
 	char	string4[] = "00\000ef/*qeq:|+-2";
 	char	string5[] = "ef/*qeq:|+-2";
 	char	string6[] = "\001\040\200\176\177\300\050fzlk1080735cf,..,zqewr!";
+	char	string7[] = "alkqel\0alkqwi";
 
 	printf("%s", "---- ft_strchr ----\n");
 
@@ -59,6 +59,9 @@ int	main(void)
 
 	test_regular_fnc(string6, 0);
 	test_ft_fnc(string6, 0);
+
+	test_regular_fnc(string7, '\0');
+	test_ft_fnc(string7, '\0');
 
 	return 0;
 }

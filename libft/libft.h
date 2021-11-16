@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:59:56 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/11 22:50:05 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/12 23:09:20 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *src);
 void	*ft_calloc(size_t count, size_t size);
 char	*strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
 #endif

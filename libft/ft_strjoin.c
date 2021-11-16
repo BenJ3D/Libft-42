@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 22:20:33 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/12 23:37:46 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:26:31 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		s1len;
-	int		s2len;
-	int 	t_len;
-	int		i;
-	int		j;
-	char	*ptr;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	s1len = ft_strlen(s1);
-	s2len = ft_strlen(s2);
-	t_len = s1len + s2len + 1;
-	ptr = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = malloc(sizeof(s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
 	j = 0;
-	if (t_len == 0)
-		return (0);
-	while (i <= t_len)
+	while (s1[i])
 	{
-		if (*s1)
-			ptr[i] = s1[j];
-		if (*s2)
-			ptr[i + s1len] = s2[j];
+		str[j] = s1[i];
 		i++;
+		j++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	i = 0;
+	while (s2[i])
+	{
+		str[j] = s2[i];
+		i++;
+		j++;
+	}
+	str[j] = '\0';
+	return (str);
 }

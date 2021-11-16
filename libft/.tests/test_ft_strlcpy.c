@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include "../ft_strlen.c"
 #include "../ft_strlcpy.c"
 
 void	test_regular_fnc(char	*dest, char *src, unsigned int size)
@@ -37,20 +38,25 @@ void	test_ft_fnc(char	*dest, char *src, unsigned int size)
 
 int	main(void)
 {
-	char	src1[] = "test";
-
+	char	src1[] = "";
+	char	src2[] = "salut";
 	char	dest1[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
 	char	dest2[] = "ABCDEFHIJKLMNOPQRSTUVWYZabcdefghijklmnopkrstuvwxyz";
-	char	dest3[] = "AB";
-	char	dest4[] = "AB";
+	char	dest3[] = "12";
+	char	dest4[] = "12";
 
 	printf("%s", "---- ft_strlcpy ----\n");
 
-	test_regular_fnc(dest1, src1, 5);
-	test_ft_fnc(dest2, src1, 5);
+	test_regular_fnc(dest3, src1, 1);
+	test_ft_fnc(dest4, src1, 1);
 
-	test_regular_fnc(dest3, src1, 3);
-	test_ft_fnc(dest4, src1, 3);
+	test_regular_fnc(dest1, src2, 5);
+	test_ft_fnc(dest2, src2, 5);
+
+	test_regular_fnc(dest3, src2, 3);
+	test_ft_fnc(dest4, src2, 3);
+
+
 
 	return 0;
 }
