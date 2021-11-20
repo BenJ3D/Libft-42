@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 11:52:14 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/19 14:26:05 by bducrocq         ###   ########.fr       */
+/*   Created: 2019/10/22 10:35:03 by vvaltone          #+#    #+#             */
+/*   Updated: 2021/11/20 18:12:44 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char			*str;
-	size_t			i;
-	size_t			j;
+	int		i;
 
-	if (!s)
-		return (NULL);
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
 	i = 0;
-	j = start;
-	while (i < len && j < ft_strlen(s))
-	{
-		str[i] = s[j];
-		i++;
-		j++;
-	}
-	str[i] = '\0';
-	return (str);
+	if (s)
+		while (s[i])
+			write(fd, &s[i++], 1);
+	write(fd, "\n", 1);
 }

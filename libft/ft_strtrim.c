@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:29:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/16 20:56:07 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/20 15:16:43 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-#include <stdio.h>
-int main()
-{
-  char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-	char *s2 = "Hello \t  Please\n Trim me !";
-	char *ret = ft_strtrim(s1, " \n\t");
+// #include <stdio.h>
+// int main()
+// {
+//   char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+// 	char *s2 = "Hello \t  Please\n Trim me !";
+// 	char *ret = ft_strtrim(s1, " \n\t");
 
-	if (!strcmp(ret, s2))
-		puts("TEST_SUCCESS");
-	puts(ret);
+// 	if (!strcmp(ret, s2))
+// 		puts("TEST_SUCCESS");
+// 	puts(ret);
     
-}
+// }
 
 // #include "libft.h"
 

@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 09:53:02 by bducrocq          #+#    #+#              #
-#    Updated: 2021/11/18 19:23:59 by bducrocq         ###   ########.fr        #
+#    Updated: 2021/11/20 18:32:02 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,13 @@ FILES = ft_memset \
 		ft_strjoin \
 		ft_strtrim \
 		ft_split \
+		ft_itoa \
+		ft_strmapi \
+		ft_striteri \
+		ft_putstr_fd \
+		ft_putendl_fd \
+		ft_putnbr_fd \
+		ft_putchar_fd
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
