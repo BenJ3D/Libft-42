@@ -34,20 +34,21 @@ static char	**free_all(char **s_splited)
 	return (NULL);
 }
 
-static int	size_or_cntwrd(char const *s, char sp, size_t start, int b, int i)
+static int	size_or_cntwrd(char const *s, char sp, size_t start, int b)
 {
 	if (b == 1)
 	{
 		b = 0;
+		start = 0;
 		while (*s)
 		{
-			if (*s != sp && i == 0)
+			if (*s != sp && start == 0)
 			{
-				i = 1;
+				start = 1;
 				b++;
 			}
 			else if (*s == sp)
-				i = 0;
+				start = 0;
 			s++;
 		}
 		return (b);
@@ -80,7 +81,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	nword = (size_or_cntwrd(s, c, 0, 1, 0));
+	nword = (size_or_cntwrd(s, c, 0, 1));
 	tab_split = main_malloc(nword);
 	i = 0;
 	n = 0;
@@ -89,7 +90,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] == c)
 			i++;
 		if (n < nword)
-		tab_split[n] = ft_substr(s, i, size_or_cntwrd(s, c, i, 0, 0));
+		tab_split[n] = ft_substr(s, i, size_or_cntwrd(s, c, i, 0));
 		if (!tab_split[n])
 			return (free_all(tab_split));
 		while (s[i] && s[i] != c)
@@ -100,18 +101,18 @@ char	**ft_split(char const *s, char c)
 	return (tab_split);
 }
 
-// int main()
-// {
-// 	int j;
-// 	char **s;
+int main()
+{
+	int j;
+	char **s;
 
-// 	j = 0;
-// 	s = ft_split("     split       this for   me  !       ", ' ');
-// 	//s = ft_split("....Coucou.je.suis.split.....et...ça....doit.faire.24h.que.je.suis.....dessus.fin..", '.');
-// 	//printf ("%s", s[1]);
-// 	while(s[j])
-// 		printf("===%s\n", s[j++]);
-// 	free(s);
+	j = 0;
+	s = ft_split("     split       this for   me  !       ", ' ');
+	//s = ft_split("....Coucou.je.suis.split.....et...ça....doit.faire.24h.que.je.suis.....dessus.fin..", '.');
+	//printf ("%s", s[1]);
+	while(s[j])
+		printf("===%s\n", s[j++]);
+	free(s);
 
-// 	//printf("\n\n\noutput normal : \n===coucou je suis split\n=== si je marche je suis la deuxieme ligne \n=== je suis insuportable \n===je marche 1 fois sur deux \n=== je suis une nouvelle ligne \n=== en vrai si tu me rentre en premiere piscine c est pas mal \n=== je tombe aussi en exam btw \n=== faut aussi me test avec des sp vide \n=== bon je te laisse bonne chance pour la piscine frero");
-// }
+	//printf("\n\n\noutput normal : \n===coucou je suis split\n=== si je marche je suis la deuxieme ligne \n=== je suis insuportable \n===je marche 1 fois sur deux \n=== je suis une nouvelle ligne \n=== en vrai si tu me rentre en premiere piscine c est pas mal \n=== je tombe aussi en exam btw \n=== faut aussi me test avec des sp vide \n=== bon je te laisse bonne chance pour la piscine frero");
+}
