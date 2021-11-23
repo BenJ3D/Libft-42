@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:53:31 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/11 18:06:07 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:48:49 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {	
-	while (*s != c)
+	while (*s != (char)c)
 	{
 		if (*s == '\0')
 			return ((char *)0);

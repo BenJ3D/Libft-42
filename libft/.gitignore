@@ -2,3 +2,7 @@
 .DS*
 *.a
 *.o
+.vscode
+.tests*
+test*
+.flo*

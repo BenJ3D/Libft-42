@@ -13,9 +13,9 @@ int main()
                 nb = 0;
 
         if ((nb % 2) == 0)
-                printf("**");
+                printf(" ");
         if ((nb % 2) == 1)
-                printf("//");
+                printf(" ");
  }
 
 }

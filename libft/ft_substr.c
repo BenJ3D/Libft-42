@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:52:14 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/19 14:26:05 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:00:08 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if ((ft_strlen(s) - start) < len)
+		len = (ft_strlen(s) - start);
+	if (ft_strlen(s) < start + len)
+		len = ft_strlen(s);
+	str = ft_calloc(len + 1, sizeof(*s));
 	if (!str)
 		return (NULL);
 	i = 0;

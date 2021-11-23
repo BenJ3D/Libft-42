@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 21:00:06 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/20 15:52:28 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/23 20:03:54 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,27 +62,11 @@ static int	size_or_cntwrd(char const *s, char sp, size_t start, int b)
 	return (b);
 }
 
-static char	**main_malloc(size_t nword)
+static char	**make_line(char const *s, char c, char **tab_split, size_t nword)
 {
-	char	**tmp;
-
-	tmp = (char **)malloc(sizeof(char *) * (nword + 1));
-	if (!tmp)
-		return (0);
-	return (tmp);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	size_t	i;
 	size_t	n;
-	size_t	nword;
-	char	**tab_split;
+	size_t	i;
 
-	if (!s)
-		return (0);
-	nword = (size_or_cntwrd(s, c, 0, 1));
-	tab_split = main_malloc(nword);
 	i = 0;
 	n = 0;
 	while (s[i] && n < nword)
@@ -98,5 +82,20 @@ char	**ft_split(char const *s, char c)
 		n++;
 	}
 	tab_split[n] = 0;
+	return (tab_split);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	nword;
+	char	**tab_split;
+
+	if (!s)
+		return (NULL);
+	nword = (size_or_cntwrd(s, c, 0, 1));
+	tab_split = (char **)malloc(sizeof(char *) * (nword + 1));
+	if (!tab_split)
+		return (NULL);
+	tab_split = make_line(s, c, tab_split, nword);
 	return (tab_split);
 }

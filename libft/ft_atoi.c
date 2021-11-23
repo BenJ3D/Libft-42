@@ -6,20 +6,29 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:30:59 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/09 16:59:35 by bducrocq         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:09:42 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(char *str);
+int	ft_isspace(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r')
+		return (1);
+	return (0);
+}
 
 int	ft_atoi(const char *src)
 {
-	int	i;
-	int	nb;
-	int	sign;
-	char *str;
+	int		i;
+	int		nb;
+	int		sign;
+	char	*str;
 
 	str = (char *)src;
 	nb = 0;
@@ -27,7 +36,7 @@ int	ft_atoi(const char *src)
 	i = 0;
 	while (ft_isspace(&str[i]) != 0)
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' && str[i + 1] != '+')
 	{
 		sign *= -1;
 		i++;
@@ -40,15 +49,4 @@ int	ft_atoi(const char *src)
 		i++;
 	}
 	return (nb * sign);
-}
-
-int	ft_isspace(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r')
-		return (1);
-	return (0);
 }

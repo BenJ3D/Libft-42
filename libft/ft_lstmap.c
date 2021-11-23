@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 16:11:17 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/23 15:39:35 by bducrocq         ###   ########.fr       */
+/*   Created: 2021/11/22 16:16:33 by bducrocq          #+#    #+#             */
+/*   Updated: 2021/11/22 17:37:40 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t				i;
-	const unsigned char	*sp1;
-	const unsigned char	*sp2;
+	t_list	*tmp1;
+	t_list	*tmp2;
+	t_list	*tmp3;
 
-	sp1 = (const unsigned char *)s1;
-	sp2 = (const unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	if (!lst || !f)
+		return (NULL);
+	tmp1 = lst;
+	tmp2 = ft_lstnew(f(lst->content));
+	while (tmp1->next)
 	{
-		if (sp1[i] != sp2[i])
-			return ((int)sp1[i] - (int)sp2[i]);
-		i++;
+		tmp3 = ft_lstnew(f(tmp1->next->content));
+		if (!tmp2)
+		{
+			ft_lstclear(&tmp2, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&tmp2, tmp3);
+		tmp1 = tmp1->next;
 	}
-	return (0);
+	return (tmp2);
 }
